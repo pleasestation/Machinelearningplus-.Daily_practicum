@@ -32,6 +32,8 @@ The exercises in this repository focus on practical problem-solving using SQL an
 │   ├── dataset2.xlsx
 │   └── ...
 └── README.md
+```
+
 # Key Components
 
 - **SQL/**: Contains SQL scripts for solving various database problems, including complex joins, subqueries, window functions, and aggregations.
