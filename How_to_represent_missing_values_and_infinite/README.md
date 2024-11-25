@@ -2,6 +2,29 @@
 ### 4.2 How to represent missing values and infinite?
 Missing values can be represented using the `np.nan` object, while `np.inf` represents infinite. Let’s place some in `arr2d`.
 
+## How to Handle Missing and Infinite Values in NumPy Arrays
+
+This example demonstrates how to work with missing (`np.nan`) and infinite (`np.inf`) values in a NumPy array.
+
+### 1. What are Missing and Infinite Values?
+- **Missing values** represent undefined or absent data, denoted in NumPy by `np.nan` (Not a Number).
+- **Infinite values** are extremely large numbers, either positive or negative, represented by `np.inf`.
+
+### 2. Inserting Missing and Infinite Values
+You can insert these special values into an array like this:
+
+```python
+# Create a 2D NumPy array
+import numpy as np
+arr2 = np.array([[1, 2, 3, 4],
+                 [3, 4, 5, 6],
+                 [5, 6, 7, 8]], dtype=float)
+
+# Insert a missing value and an infinite value
+arr2[1, 1] = np.nan  # missing value
+arr2[1, 2] = np.inf  # infinite value
+arr2
+
 This repository explores best practices for handling missing and infinite values in datasets. It provides practical examples in Python, demonstrating various techniques to identify, represent, and manage these values in data preprocessing and analysis.
 
 ## Overview
