@@ -2,6 +2,9 @@
 ### 4.2 How to represent missing values and infinite?
 Missing values can be represented using the `np.nan` object, while `np.inf` represents infinite. Let’s place some in `arr2d`.
 
+### The purpose of this task:
+This process helps clean and prepare data by replacing "bad" values (missing or infinite) with manageable placeholders.
+
 ## How to Handle Missing and Infinite Values in NumPy Arrays
 
 This example demonstrates how to work with missing (`np.nan`) and infinite (`np.inf`) values in a NumPy array.
@@ -19,11 +22,42 @@ import numpy as np
 arr2 = np.array([[1, 2, 3, 4],
                  [3, 4, 5, 6],
                  [5, 6, 7, 8]], dtype=float)
+```
+
+The array now looks like this:
+
+```python
+array([[ 1.,  2.,  3.,  4.],
+       [ 3.,  nan,  inf,  6.],
+       [ 5.,  6.,  7.,  8.]])
+```
+# 3. Replacing Missing and Infinite Values
+   
+To replace np.nan and np.inf with a specified value (e.g., -1):
+```python
+# Find positions with missing or infinite values
+missing_bool = np.isnan(arr2) | np.isinf(arr2)
+
+# Replace those values with -1
+arr2[missing_bool] = -1
+arr2
+```
+The updated array is:
+```python
+array([[ 1.,  2.,  3.,  4.],
+       [ 3., -1., -1.,  6.],
+       [ 5.,  6.,  7.,  8.]])
+```
+### Key Functions Used:
+- `np.isnan(arr)`: Identifies `np.nan` (missing) values in the array.
+- `np.isinf(arr)`: Identifies `np.inf` (infinite) values in the array.
+- `|`: Logical "OR" operator, combines both conditions (`np.isnan` and `np.isinf`).
 
 # Insert a missing value and an infinite value
 arr2[1, 1] = np.nan  # missing value
 arr2[1, 2] = np.inf  # infinite value
 arr2
+
 
 This repository explores best practices for handling missing and infinite values in datasets. It provides practical examples in Python, demonstrating various techniques to identify, represent, and manage these values in data preprocessing and analysis.
 
